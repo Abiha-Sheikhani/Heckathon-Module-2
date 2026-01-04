@@ -248,155 +248,209 @@ body {
 .login-2 p.footer {
   opacity: 0.75;
 }
-/* BASE */
+
+/* ---------------- BASE ---------------- */
 body {
-  background: #f4f6fb;
-  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(135deg, #e8edf3, #f7f9fc); /* soft gradient */
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
   margin: 0;
 }
 
-/* HEADER */
+/* ---------------- HEADER ---------------- */
 .app-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e9f0;
+  background: #fff;
+  border-bottom: 1px solid #e0e7ff;
   padding: 14px 0;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2563eb;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3b82f6;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 16px;
 }
-
-
 
 .nav-links a {
   text-decoration: none;
-  font-size: 14px;
-  color: #475569;
+  font-size: 15px;
   font-weight: 500;
+  color: #4b5563;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #2563eb;
+  background: #3b82f6;
+  color: #fff;
 }
 
 .logout-btn {
-  background: #2563eb;
-  color: white;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
   border: none;
-  padding: 8px 18px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* FEED WRAPPER */
-.feed-wrapper {
-  max-width: 900px; /* THIS fixes big cards */
-  margin-top: 30px;
-}
-
-/* CARD */
-#postsContainer .card {
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  background: white;
-  margin-bottom: 24px;
-}
-
-/* CARD BODY */
-.card-body {
-  padding: 20px;
-}
-
-/* USER ROW */
-.avatar {
-  width: 38px;
-  height: 38px;
-  background: #2563eb;
-  color: white;
+  padding: 8px 22px;
+  border-radius: 12px;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+}
+
+/* ---------------- FEED WRAPPER ---------------- */
+.feed-wrapper {
+  max-width: 450px; /* narrow feed like Instagram/LinkedIn */
+  margin: 50px auto;
+  padding: 0 12px;
+}
+
+/* ---------------- CARD ---------------- */
+#postsContainer .card {
+  border: none;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px); /* frosted glass effect */
+  margin-bottom: 32px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+#postsContainer .card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, #3b82f6, #60a5fa, #93c5fd);
+  opacity: 0;
+  filter: blur(90px);
+  transition: all 0.6s ease;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+#postsContainer .card:hover::before {
+  opacity: 0.12;
+  transform: rotate(15deg);
+}
+
+#postsContainer .card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+}
+
+/* ---------------- IMAGE ---------------- */
+.card img {
+  width: 100%;
+  height: 320px; /* tall premium image */
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.6s ease, filter 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* ---------------- CARD BODY ---------------- */
+.card-body {
+  padding: 20px 24px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-body {
+  transform: translateY(-3px);
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.card-text {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-top: 6px;
+}
+
+/* ---------------- USER ROW ---------------- */
+.user-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  background: #3b82f6;
+  color: #fff;
+  font-weight: 700;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 16px;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .avatar {
+  transform: scale(1.15) rotate(5deg);
 }
 
 h6 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   margin: 0;
-  color: #0f172a;
 }
 
 small {
   font-size: 12px;
-  color: #64748b;
+  color: #6b7280;
 }
 
-/* CONTENT */
-h3 {
-  font-size: 16px;
+/* ---------------- READ MORE ---------------- */
+.read-more {
+  display: inline-block;
+  margin-top: 14px;
+  color: #3b82f6;
+  text-decoration: none;
   font-weight: 600;
-  margin-top: 12px;
-  color: #0f172a;
+  transition: all 0.3s ease;
 }
 
-.card-text {
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.6;
+.read-more:hover {
+  text-decoration: underline;
+  color: #2563eb;
 }
 
-/* IMAGE */
-.card img {
-  width: 100%;
-  max-height: 240px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-top: 12px;
-}
-
-/* MOBILE */
-@media (max-width: 576px) {
-
-
-  .feed-wrapper {
-    margin-top: 20px;
-  }
-}
-#postsContainer .card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-#postsContainer .card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-}
-.card img {
-  transition: transform 0.6s ease;
-}
-
-.card:hover img {
-  transform: scale(1.03);
-}
-.avatar {
-  transition: transform 0.35s ease;
-  margin-right: 5px;
-}
-
-.card:hover .avatar {
-  transform: scale(1.1);
-}
+/* ---------------- CARD ANIMATION ---------------- */
 #postsContainer .card {
   opacity: 0;
   transform: translateY(20px);
@@ -409,12 +463,27 @@ h3 {
     transform: translateY(0);
   }
 }
-.card-body {
-  transition: transform 0.4s ease;
-}
 
-.card:hover .card-body {
-  transform: translateY(-4px);
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 500px) {
+  .feed-wrapper {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -479,3 +548,41 @@ body {
     transform: translateY(0);
   }
 }
+/* ---------------- EDIT/DELETE BUTTONS ---------------- */
+.card .btn-outline-warning,
+.card .btn-outline-danger {
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 6px 14px;
+  transition: all 0.3s ease;
+}
+
+.card .btn-outline-warning:hover {
+  background: #facc15;
+  border-color: #facc15;
+  color: #1f2937;
+}
+
+.card .btn-outline-danger:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

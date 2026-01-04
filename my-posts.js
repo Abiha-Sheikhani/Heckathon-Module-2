@@ -17,7 +17,7 @@ async function loadMyPosts(uid) {
     }
 
     if (posts.length === 0) {
-        postsContainer.innerHTML = "<small>No posts yet</small>";
+        postsContainer.innerHTML = "<h1>No posts yet</h1>";
         return;
     }
 
