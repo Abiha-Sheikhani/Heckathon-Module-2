@@ -416,3 +416,66 @@ h3 {
 .card:hover .card-body {
   transform: translateY(-4px);
 }
+
+body {
+  background: linear-gradient(135deg, #e8edf3, #f7f9fc);
+  font-family: "Inter", sans-serif;
+}
+
+.post-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #e2e8f0;
+}
+
+.post-card h3 {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Inputs */
+.custom-input {
+  border-radius: 12px;
+  border: 1px solid #cfd8e3;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: #4f83ff;
+  box-shadow: 0 0 0 4px rgba(79, 131, 255, 0.15);
+}
+
+/* Button */
+.post-btn {
+  background: linear-gradient(135deg, #4f83ff, #3b6eea);
+  color: white;
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(79, 131, 255, 0.35);
+}
+
+/* Entry animation */
+.animate-entry {
+  animation: fadeSlide 0.7s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
