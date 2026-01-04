@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- icon library if needed -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+
+<section class="page login-2-page">
+  <div class="login-2">
+
+    <!-- NAV -->
+    <ul class="card-nav">
+      <li>
+        Auth
+        <span class="active-bar"></span>
+      </li>
+
+      <li>
+        <button id="signinBtn" class="active">
+          <i class="uil uil-check"></i>
+          <span>Sign In</span>
+        </button>
+      </li>
+
+      <li>
+        <button id="signupBtn">
+          <i class="uil uil-plus"></i>
+          <span>Sign Up</span>
+        </button>
+      </li>
+    </ul>
+
+    <!-- HERO -->
+    <div class="card-hero">
+      <div class="card-hero-inner">
+
+        <div class="card-hero-content signin">
+          <h2>Welcome Back.</h2>
+          <h3>Please enter your credentials.</h3>
+          <img src="./assets/signin.PNG" />
+        </div>
+
+        <div class="card-hero-content signup">
+          <h2>Join The Crowd.</h2>
+          <h3>Sign up now and get started today.</h3>
+          <img src="./assets/signup.PNG" />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FORMS -->
+    <div class="card-form">
+      <div class="forms">
+
+        <!-- SIGN IN -->
+        <form>
+          <p>Don't have an account? <a href="#">Sign Up</a>.</p>
+
+          <label>Email</label>
+          <div class="control">
+            <input type="email" id="loginEmail" placeholder="youremail@gmail.com" />
+            <i class="uil uil-envelope"></i>
+          </div>
+
+          <label>Password</label>
+          <div class="control">
+            <input type="password" id="loginPassword"  placeholder="••••••••••" />
+            <i class="uil uil-lock"></i>
+          </div>
+
+          <button id="loginBtn" type="button">SIGN IN</button>
+
+          <p class="footer">
+            By clicking Sign In you agree to our terms and conditions.
+          </p>
+        </form>
+
+        <!-- SIGN UP -->
+        <form>
+          <p>Already have an account? <a href="#">Sign In</a>.</p>
+
+          <label>Username</label>
+          <div class="control">
+            <input type="text" id="username" placeholder="myusername" />
+            <i class="uil uil-user"></i>
+          </div>
+
+          <label>Email</label>
+          <div class="control">
+            <input type="email" id="email" placeholder="youremail@gmail.com" />
+            <i class="uil uil-envelope"></i>
+          </div>
+
+          <label>Password</label>
+          <div class="control">
+            <input type="password" id="password" placeholder="••••••••••" />
+            <i class="uil uil-lock"></i>
+          </div>
+
+          <button id="btn" type="button">SIGN UP</button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="module" src="config.js"></script>
+<script type="module" src="script.js"></script>
+</body>
+</html>
